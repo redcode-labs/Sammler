@@ -20,7 +20,6 @@
 - **Credit card numbers**
 - **Domains**
 - **Phone numbers**
-- **Names and surnames**
 
 ## Usage
 
