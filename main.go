@@ -50,7 +50,7 @@ func write_file(filename string, data string) {
 func exit_on_error(message string, err error) {
 	if err != nil {
 		fmt.Println(fmt.Sprintf("%s %s: %s", red("[X]"), bold(message), err.Error()))
-		os.Exit(0)
+		os.Exit(1)
 	}
 }
 
@@ -192,7 +192,7 @@ func contains_any(elements []string, str string) string {
 }
 
 func main() {
-	parser := argparse.NewParser("sammler", "") //, usage_prologue)
+	parser := argparse.NewParser("sammler", "") // usage prologue
 	//var out *string = parser.String("o", "out", &argparse.Options{Required: false, Default:"default", Help: "Save found strings to a file"})
 	var file *[]string = parser.List("f", "file", &argparse.Options{Required: false, Help: "Files/strings to analyze"})
 	var all *bool = parser.Flag("a", "all", &argparse.Options{Required: false, Help: "Analyze all files from current directory"})
